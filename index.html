@@ -46,7 +46,7 @@ body{
     100%{background-position:0% 50%;}
 }
 
-/* image container with safe margins */
+/* image with safe margins */
 .bg-frame{
     position:absolute;
     inset:5vw;
@@ -55,7 +55,7 @@ body{
     z-index:0;
 }
 
-/* center column */
+/* vertical center layout */
 .center{
     position:relative;
     z-index:1;
@@ -65,50 +65,30 @@ body{
     align-items:center;
 }
 
-/* rounded translucent boxes */
+/* rounded translucent containers */
 .box{
     background:rgba(0,0,0,0.65);
     padding:2rem 3rem;
     border-radius:28px;
-    min-width:220px;
+    min-width:240px;
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-/* SOUND button */
-.sound-btn{
+/* buttons / links */
+.sound-btn,
+.ticket,
+.location{
     background:none;
     border:none;
     color:#fff;
-    font-size:1.2rem;
-    font-weight:600;
-    letter-spacing:3px;
-    cursor:pointer;
-}
-
-/* ticket button */
-.ticket{
-    color:#fff;
-    text-decoration:none;
+    font-size:1.1rem;
     font-weight:600;
     letter-spacing:3px;
     text-transform:uppercase;
-}
-
-/* bottom address bar */
-.address{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:#000;
-    color:#fff;
-    text-align:center;
-    font-weight:700;
-    padding:1.2rem;
-    letter-spacing:1px;
-    z-index:2;
+    text-decoration:none;
+    cursor:pointer;
 }
 </style>
 </head>
@@ -131,10 +111,14 @@ body{
         </a>
     </div>
 
-</div>
+    <div class="box">
+        <a class="location"
+        href="https://www.google.com/maps/search/?api=1&query=Brenley+Farm+Valley+Faversham+ME13+9LY"
+        target="_blank">
+        LOCATION
+        </a>
+    </div>
 
-<div class="address">
-Brenley Farm Valley · Faversham · ME13 9LY
 </div>
 
 <audio id="a"></audio>
