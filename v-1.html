@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remain in Light · Whitstable Carnival</title>
+
+  <!-- Preview for GitHub / social media -->
+  <meta name="image" content="https://indexmod.github.io/Remain-in-Light-Festival/preview.png">
+  <meta property="og:image" content="https://indexmod.github.io/Remain-in-Light-Festival/preview.png">
+  <meta property="twitter:image" content="https://indexmod.github.io/Remain-in-Light-Festival/preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Remain in Light · Whitstable Carnival">
+  <meta property="og:description" content="One-page festival poster with live radio stream and booking link">
+  <meta property="twitter:card" content="summary_large_image">
+
+  <!-- Favicon: красный кружок -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ccircle cx='16' cy='16' r='16' fill='red'/%3E%3C/svg%3E">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(
+        -45deg,
+        #ffd6e8,
+        #ffe7c7,
+        #fff4b8,
+        #d6f0ff,
+        #e5d9ff
+    );
+    background-size: 400% 400%;
+    animation: sunsetGradient 40s ease infinite;
+
+    color: #000;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 3rem 1.5rem;
+}
+
+@keyframes sunsetGradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.poster {
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+}
+
+/* BIG TITLE */
+
+h1 {
+    font-size: clamp(3rem, 9vw, 7rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+}
+
+.subhead {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 1rem 0 3rem;
+}
+
+/* PLAY BUTTON */
+
+.player-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0 3rem;
+}
+
+.play-btn {
+    width: 110px;
+    height: 110px;
+    border: 3px solid #000;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.05);
+}
+
+.play-btn::before {
+    content: "";
+    position: absolute;
+    left: 46%;
+    top: 50%;
+    transform: translate(-40%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 28px solid #000;
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+}
+
+.playing::before {
+    border: none;
+    width: 28px;
+    height: 28px;
+    background: #000;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* META */
+
+.dates {
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    text-transform: uppercase;
+}
+
+.featuring {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2rem;
+}
+
+.headliner {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin: 0.5rem 0 2rem;
+}
+
+/* ARTIST LIST */
+
+.artist-list {
+    font-size: 0.95rem;
+    line-height: 2;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem 1.6rem;
+    margin-bottom: 2.5rem;
+}
+
+.extras {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+
+.location-block {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+
+.ticket-link a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    border: 2px solid #000;
+    padding: 0.8rem 2.5rem;
+    display: inline-block;
+    margin-top: 1.5rem;
+    transition: 0.15s ease;
+}
+
+.ticket-link a:hover {
+    background: #000;
+    color: #fff;
+}
+
+.fundraiser-note {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-top: 3rem;
+    letter-spacing: 1px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="poster">
+
+    <h1>Remain in Light</h1>
+    <h1>Festival</h1>
+    <div class="subhead">A Whitstable Carnival Fundraiser</div>
+
+    <div class="player-wrap">
+        <button class="play-btn" id="playBtn"></button>
+    </div>
+
+    <div class="dates">10 · 11 · 12 July 2026</div>
+
+    <div class="featuring">Featuring</div>
+    <div class="headliner">A headliner too hot to announce</div>
+
+    <div class="artist-list">
+Carnival Collective · Behind the Mask · Beans on Toast · Amy True · The Scribes · Beat Cleaver · Centurion Sect · Coho Collective DJs · Josh Magill · Monkey Light · Apollo Ray · Sammi G · Ghosttongue · Gypskazz · Autonemy · Grassmell · Ma Polaine · Itchy Teeth · Delicia · Tony Westcliff and the Abominations · Vibe Machine · Fine Lime · Liam Lancia · Fax Machine · Basement Flakes · Red Eye Rascal · Austerity Disco · Nudie Pics · Alabaster Orphans · Dingo Jingo · Fiction Party · Buddub · David Woodcock · Nigel Hobbins · April Blood · Heavy Treble · Flame Pilots · Charlie Hannah and the House Plants · Native Oysters · Gionatan Scalli · Liotia · Michael Rumball
+    </div>
+
+    <div class="extras">
+        + More Bands · Dance Tent · Circus · Kids Activities · Poetry Stage
+    </div>
+
+    <div class="location-block">
+        Brenley Farm Valley · Faversham · ME13 9LY
+    </div>
+
+    <div class="ticket-link">
+        <a href="https://whitstablecarnival.co.uk/event/remain-in-light-festival/" target="_blank">
+            › Get Tickets ‹
+        </a>
+    </div>
+
+    <div class="fundraiser-note">
+        Whitstable Carnival Fundraiser · All proceeds support the carnival
+    </div>
+
+</div>
+
+<audio id="a"></audio>
+
+<script>
+const url = "https://stream-mixtape-geo.ntslive.net/mixtape6";
+const a = document.getElementById("a");
+const btn = document.getElementById("playBtn");
+
+let started = false;
+
+btn.onclick = () => {
+    if (!started) {
+        started = true;
+        a.src = url;
+    }
+
+    if (a.paused) {
+        a.play().catch(e => console.log(e));
+    } else {
+        a.pause();
+    }
+};
+
+a.onplaying = () => {
+    btn.classList.add("playing");
+};
+
+a.onpause = () => {
+    btn.classList.remove("playing");
+};
+</script>
+
+</body>
+</html>
